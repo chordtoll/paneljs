@@ -1,0 +1,9 @@
+.content {
+  border-collapse: collapse;
+}
+
+.content tr th, .content tr td {
+  border: 1px solid #999;
+  padding: 2px;
+  text-align: left;
+}

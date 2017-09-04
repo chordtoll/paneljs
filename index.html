@@ -1,0 +1,159 @@
+<head>
+  <script src="relays.js"></script>
+  <script src="links.js"></script>
+  <script src="disjointset.js"></script>
+  <script src="engine.js"></script>
+  <script src="rloc.js"></script>
+  <script src="testinput.js"></script>
+  <script type="text/javascript">
+    function doOnload() {
+      init();
+      nodelist();
+      buildtable();
+    }
+
+    function startSim() {
+      running=true;
+      tick();
+    }
+
+    function stopSim() {
+      running=false;
+    }
+
+    function buildtable() {
+      document.getElementById('timer').innerHTML=''+timer;
+
+      var tb  = document.createElement('tbody');
+      tb.id='sender';
+      for (var i in rloc){
+        var tr = tb.insertRow();
+        for (var j in rloc[i]){
+          var td=tr.insertCell();
+          if (rloc[i][j] in relays){
+            if (relays[rloc[i][j]].timer!=0){
+              td.style="background-color:red;"
+            }
+          }
+          td.appendChild(document.createTextNode(rloc[i][j]));
+        }
+      } 
+      document.getElementById("sender").replaceWith(tb);
+
+      var tb  = document.createElement('tbody');
+      tb.id="relayb";
+      for(var k in relays){
+        var tr = tb.insertRow();
+        var td = tr.insertCell();
+        td.appendChild(document.createTextNode(relays[k].name));
+        var td = tr.insertCell();
+        td.appendChild(document.createTextNode(relays[k].timer));
+        var td = tr.insertCell();
+        td.appendChild(document.createTextNode(parseFloat(nodevoltage(k+'.cA').toFixed(2))));
+        var td = tr.insertCell();
+        td.appendChild(document.createTextNode(parseFloat(nodevoltage(k+'.cB').toFixed(2))));
+      }
+      document.getElementById("relayb").replaceWith(tb);
+
+      var tb  = document.createElement('tbody');
+      tb.id="linkb";
+      for(var l of links){
+        var tr = tb.insertRow();
+        var td = tr.insertCell();
+        td.appendChild(document.createTextNode(l[0]));
+        var td = tr.insertCell();
+        td.appendChild(document.createTextNode(l[1]));
+        var td = tr.insertCell();
+        td.appendChild(document.createTextNode(l[2]));
+      }
+      document.getElementById("linkb").replaceWith(tb);
+
+      var tb  = document.createElement('tbody');
+      tb.id="nodeb";
+      for(var n in nodes){
+        var tr = tb.insertRow();
+        var td = tr.insertCell();
+        td.appendChild(document.createTextNode(n));
+        var td = tr.insertCell();
+        td.appendChild(document.createTextNode(parseFloat(nodevoltage(n).toFixed(2))));
+      }
+      document.getElementById("nodeb").replaceWith(tb);
+
+      var tb  = document.createElement('tbody');
+      tb.id="specialnodeb";
+      for(var n of ['L.3T','P1.cA','P2.cA','P3.cA','P4.cA','P5.cA','P6.cA','t1','t2','t4','t5','t0','tRA']){
+        var tr = tb.insertRow();
+        var td = tr.insertCell();
+        td.appendChild(document.createTextNode(n));
+        var td = tr.insertCell();
+        td.appendChild(document.createTextNode(parseFloat(nodevoltage(n).toFixed(2))));
+      }
+      document.getElementById("specialnodeb").replaceWith(tb);
+
+    }
+  </script>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+</head>
+<body onload="doOnload();">
+  <button onclick="startSim();">Start</button>
+  <button onclick="stopSim();">Stop</button>
+  <button onclick="tick();">Step</button>
+  <br>
+  <div id=timer></div>
+  <table class=content>
+      <tbody id=sender></tbody>
+  </table>
+  <table>
+    <tr>
+      <td style="vertical-align: top;">
+      <table id=relayt class=content>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Timer</th>
+              <th>cA</th>
+              <th>cB</th>
+            </tr>
+          </thead>
+          <tbody id=relayb></tbody>
+        </table>
+      </td>
+      <td style="vertical-align: top;">
+        <table id=linkt class=content>
+          <thead>
+            <tr class=content>
+              <th>N1</th>
+              <th>N2</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody id=linkb></tbody>
+        </table>
+      </td>
+      <td style="vertical-align: top;">
+        <table id=nodet class=content>
+          <thead>
+            <tr class=content>
+              <th>Node</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody id=nodeb></tbody>
+        </table>
+      </td>
+      <td style="vertical-align: top;">
+        <table id=specialnodet class=content>
+          <thead>
+            <tr class=content>
+              <th>Node</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody id=specialnodeb></tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
