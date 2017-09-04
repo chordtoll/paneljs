@@ -229,9 +229,21 @@ function ds_union_links() {
 function coiloperated(relay) {
   var nv1=nodevoltage(relay.name+".cA");
   var nv2=nodevoltage(relay.name+".cB");
+  var c1;
+  var c2=false;
   if (nv1<0 || nv2<0)
-    return false;
-  return nv1!=nv2;
+    c1=false;
+  else
+    c1=nv1!=nv2;
+  if ('coil2' in relay) {
+    var nv3=nodevoltage(relay.name+".cC");
+    var nv4=nodevoltage(relay.name+".cD");
+    if (nv3<0 || nv4<0)
+      c2=false;
+    else
+      c2=nv3!=nv4;
+  }
+  return c1|c2;
 }
 
 function make_link(c0,c1) {
@@ -274,6 +286,9 @@ function init() {
     relays[r].complete=false;
     relays[r].timer=0;
     links.push([relays[r].name+'.cA',relays[r].name+'.cB',relays[r].coil])
+    if ('coil2' in relays[r]) {
+      links.push([relays[r].name+'.cC',relays[r].name+'.cD',relays[r].coil])
+    }
   }
 }
 
