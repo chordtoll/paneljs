@@ -329,6 +329,10 @@ function relaytick2() {
       continue;
     if (relays[k].timer==relays[k].ttc && relays[k].complete)
       continue;
+    if (relays[k].timer==relays[k].ttc)
+      relayactuated(k)
+    if (relays[k].timer==0)
+      relayreleased(k)
     for (var con of relays[k].contacts) {
       if (con[2]==NO && relays[k].timer>=con[3])
         make_contact(relays[k].name,con[0],con[1]);
