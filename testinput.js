@@ -1,4 +1,4 @@
-var testinput={
+/*var testinput={
   0  :[['tDP','GND',true ]],
   10 :[['tDP','GND',false]],
   20 :[['tDP','GND',true ]],    //1
@@ -24,4 +24,22 @@ var testinput={
   310:[['tDP','GND',true ]],    //1
   320:[['tDP','GND',false]],
   330:[['tDP','GND',true ]],    //2
-};
+};*/
+
+function dial(time,digits) {
+  inputs={time:[['tDP','GND',true]]};
+  time+=5;
+  for (digit of digits) {
+    for (var i=0;i<parseInt(digit);i++) {
+      inputs[time]=[['tDP','GND',false]];
+      time+=5;
+      inputs[time]=[['tDP','GND',true]];
+      time+=5;
+    }
+    time+=10;
+  }
+  return inputs;
+}
+
+testinput=dial(0,'7225678');
+console.log(testinput);

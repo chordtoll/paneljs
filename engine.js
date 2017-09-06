@@ -215,6 +215,15 @@ function pop_ds_voltage_strong(link) {
   return false;
 }
 
+function traceNode(node) {
+  console.log("Tracing node "+node+":");
+  for (n in ds_nodes) {
+    if (ds_find(ds_nodes,n)==ds_find(ds_nodes,node)) {
+      console.log('\t'+n);
+    }
+  }
+}
+
 function ds_union_links() {
   ds_voltages={};
   for (link of links) {
