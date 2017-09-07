@@ -5,7 +5,7 @@ function tick() {
   nodetick();
   relaytick1();
   relaytick2();
-  buildtable();
+  ticktables();
   timer++;
   if (running)
     setTimeout(tick,1);

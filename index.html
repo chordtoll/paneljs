@@ -10,7 +10,8 @@
     function doOnload() {
       init();
       nodelist();
-      buildtable();
+      buildsendertable();
+      ticktables(true);
     }
 
     function startSim() {
@@ -22,9 +23,7 @@
       running=false;
     }
 
-    function buildtable() {
-      document.getElementById('timer').innerHTML=''+timer;
-
+    function buildsendertable() {
       var tb  = document.createElement('tbody');
       tb.id='sender';
       for (var i in rloc){
@@ -32,6 +31,7 @@
         for (var j in rloc[i]){
           var td=tr.insertCell();
           if (rloc[i][j] in relays){
+            td.id='r'+rloc[i][j];
             td.style="background-color:#fcc;"
             if (relays[rloc[i][j]].timer!=0){
               td.style="background-color:red;"
@@ -41,7 +41,22 @@
         }
       } 
       document.getElementById("sender").replaceWith(tb);
+    }
 
+    function ticktables(full=false) {
+      document.getElementById('timer').innerHTML=''+timer;
+
+      for (r in relays) {
+        var td=document.getElementById('r'+r)
+        if (td) {
+          if (relays[r].timer!=0) {
+            td.style="background-color:red;"
+          } else {
+            td.style="background-color:#fcc;"
+          }
+        }
+      }
+      if (full) {
       var tb  = document.createElement('tbody');
       tb.id="relayb";
       for(var k in relays){
@@ -91,7 +106,7 @@
         td.appendChild(document.createTextNode(parseFloat(nodevoltage(n).toFixed(2))));
       }
       document.getElementById("specialnodeb").replaceWith(tb);
-
+      }
     }
   </script>
   <head>
@@ -105,13 +120,15 @@
   <br>
   <div id=timer></div>
   <table class=content>
-      <tbody id=sender></tbody>
+    <tbody id=sender></tbody>
   </table>
   <textarea id=log cols=80 rows=10></textarea>
+  <br>
+  <button onclick="ticktables(true);">Update</button>
   <table>
     <tr>
       <td style="vertical-align: top;">
-      <table id=relayt class=content>
+        <table id=relayt class=content>
           <thead>
             <tr>
               <th>Name</th>
