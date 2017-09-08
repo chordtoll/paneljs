@@ -3,7 +3,9 @@
   <script src="links.js"></script>
   <script src="disjointset.js"></script>
   <script src="engine.js"></script>
+  <script src="decoder.js"></script>
   <script src="rloc.js"></script>
+  <script src="sequence.js"></script>
   <script src="testinput.js"></script>
   <script src="messages.js"></script>
   <script type="text/javascript">
@@ -45,6 +47,11 @@
 
     function ticktables(full=false) {
       document.getElementById('timer').innerHTML=''+timer;
+
+      document.getElementById('R1').innerHTML=seqState('sR1');
+      document.getElementById('R2').innerHTML=seqState('sR2');
+      document.getElementById('R1n').innerHTML=seqStatename('sR1');
+      document.getElementById('R2n').innerHTML=seqStatename('sR2');
 
       for (r in relays) {
         var td=document.getElementById('r'+r)
@@ -119,6 +126,26 @@
   <button onclick="tick();">Step</button>
   <br>
   <div id=timer></div>
+  <table class=content>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Position</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>R-1</td>
+        <td id=R1></td>
+        <td id=R1n></td>
+      </tr>
+      <tr>
+        <td>R-2</td>
+        <td id=R2></td>
+        <td id=R2n></td>
+      </tr>
+    </tbody>
   <table class=content>
     <tbody id=sender></tbody>
   </table>

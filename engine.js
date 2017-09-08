@@ -4,7 +4,9 @@ function tick() {
   inputtick();
   nodetick();
   relaytick1();
+  seqtick1();
   relaytick2();
+  seqtick2();
   ticktables();
   timer++;
   if (running)
@@ -299,6 +301,13 @@ function init() {
       links.push([relays[r].name+'.cC',relays[r].name+'.cD',relays[r].coil])
     }
   }
+  for (var s in sequences) {
+    sequences[s].complete=false;
+    sequences[s].pos=1;
+    sequences[s].fpos=0;
+    links.push([sequences[s].name+'.cA',sequences[s].name+'cB',sequences[s].coil])
+  }
+  init_seq();
 }
 
 function relaytick1() {

@@ -6,6 +6,7 @@ function relayactuated(r) {
   }
   if (r=='ST'){
     log("Decoder start");
+    decoderstart();
     return;
   }
 }

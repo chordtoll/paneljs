@@ -83,4 +83,17 @@ var relays={
 
   'ST': {'name':'ST', 'ttc':1, 'coil':3000,'contacts':[]},
 
+  'RL': {'name':'RL', 'ttc':2, 'coil':1000,'coil2':2000,'contacts':[['4T','3T',NO,2 ,0],['2T','1T',NO,2 ,0],['3B','2B',NO,1 ,0],['2B','1B',NO,2 ,1]]},
+  'RL1':{'name':'RL1','ttc':2, 'coil':3000,             'contacts':[['3T','4T',NO,1 ,0],['2T','1T',NC,2 ,1],['2B','3B',NC,2 ,0],['2B','1B',NO,2 ,0]]},
+
+  'DB1':{'name':'DB1','ttc':1, 'coil':1000,'coil2':2000,'contacts':[['4T','5T',NC,1 ,0],['4T','3T',NO,1 ,0],['2T','1T',NO,1 ,0],['2B','3B',NC,1 ,0],['2B','1B',NO,1 ,0]]},
+  'DB2':{'name':'DB2','ttc':1, 'coil':1000,'coil2':2000,'contacts':[['4T','5T',NC,1 ,0],['4T','3T',NO,1 ,0],['2T','1T',NO,1 ,0],['2B','3B',NC,1 ,0],['2B','1B',NO,1 ,0]]},
+  'DB3':{'name':'DB3','ttc':1, 'coil':1000,'coil2':2000,'contacts':[['4T','5T',NC,1 ,0],['4T','3T',NO,1 ,0],['2T','1T',NO,1 ,0],['2B','3B',NC,1 ,0],['2B','1B',NO,1 ,0]]},
+
+  'DG1':{'name':'DG1','ttc':1, 'coil':1000,'coil2':3000,'contacts':[['2T','3T',NC,1 ,0],['2T','1T',NO,1 ,0],['2B','1B',NO,1 ,0]]},
+  'DG2':{'name':'DG2','ttc':1, 'coil':1000,'coil2':2000,'contacts':[['4T','5T',NC,1 ,0],['4T','3T',NO,1 ,0],['2T','1T',NO,1 ,0],['2B','3B',NC,1 ,0],['2B','1B',NO,1 ,0]]},
+  'DG4':{'name':'DG4','ttc':1, 'coil':1000,'coil2':3000,'contacts':[['2T','3T',NC,1 ,0],['2T','1T',NO,1 ,0],['2B','1B',NO,1 ,0]]},
+  'DG5':{'name':'DG5','ttc':1, 'coil':1000,'coil2':3000,'contacts':[['2T','3T',NC,1 ,0],['2T','1T',NO,1 ,0],['2B','1B',NO,1 ,0]]},
+
+  'SO': {'name':'SO', 'ttc':2, 'coil':1000,'coil2':1000,'contacts':[['4T','3T',NO,2 ,0],['2T','1T',NO,2 ,0],['2B','3B',NO,1 ,0],['2B','1B',NO,2 ,1]]},
 };
