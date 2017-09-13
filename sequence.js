@@ -1,3 +1,11 @@
+//Sequence rules:
+//  Normal cuttings:
+//    Close 5° (1/4) before start
+//    Open  5° (1/4) after end
+//  5° (1/4) cuttings:
+//    Close 2.5° (1/8) before start
+//    Open  2.5° (1/8) after end
+
 var statenames={
   'sR1':{
     1:'Normal',
@@ -38,12 +46,74 @@ var statenames={
     16:'Final Units',
     17:'Incoming Advance',
     18:'Talk Selection District'
+  },
+  'sRD':{
+    1:'Normal',
+    2:'Awaiting Sender',
+    3:'Brush Selection',
+    4:'Awaiting Sender (Trip)',
+    5:'Group Selection',
+    6:'Awaiting Release',
+    7:'Trunk Hunt',
+    8:'Awaiting Sender',
+    9:'Selections Beyond',
+    10:'Awaiting Sender',
+    11:'Talk',
+    12:'Talk',
+    13:'Awaiting Operator',
+    14:'Operator Talk',
+    15:'Distant Office-Charge',
+    16:'Message Register',
+    17:'Restore-Down Drive',
+    18:'Return to Normal',
   }
 }
 
 var sequences={
   'sR1':{'name':'sR1','coil':218},
-  'sR2':{'name':'sR2','coil':218},
+  'sR2':{'name':'sR2','coil':218,'contacts':
+    {
+      'A4':{'normal':NC,'open':[],'close':[]},
+      'B2':{'normal':NO,'open':[[3,2]],'close':[[1,6]]},
+      'C4':{'normal':NC,'open':[[1,2]],'close':[[18,6]]},
+      'F1':{'normal':NC,'open':[],'close':[]},
+      'F3':{'normal':NO,'open':[[3,4]],'close':[[1,4]]},
+      'H1':{'normal':NC,'open':[[11,2]],'close':[[18,6]]},
+      'H2':{'normal':NC,'open':[[10,2]],'close':[[11,6]]},
+	    'I1':{'normal':NC,'open':[],'close':[]},
+      'I2':{'normal':NC,'open':[[11,2]],'close':[[18,6]]},
+      'J3':{'normal':NO,'open':[[3,4]],'close':[[1,4]]},
+	    'J4':{'normal':NO,'open':[[3,2]],'close':[[1,6]]},
+      'O1':{'normal':NC,'open':[],'close':[]},
+      'O3':{'normal':NO,'open':[[3,1]],'close':[[2,5]]},
+      'O4':{'normal':NO,'open':[[2,2]],'close':[[1,6]]},
+      'Q2':{'normal':NO,'open':[[3,1]],'close':[[2,5]]},
+      'Q4':{'normal':NO,'open':[[2,2]],'close':[[1,6]]},
+      'R1':{'normal':NO,'open':[[6,2]],'close':[[1,6]]},
+      'V1':{'normal':NC,'open':[],'close':[]},
+      'V2':{'normal':NO,'open':[[3,2],[2,2]],'close':[[1,6],[2,6]]},
+	    'W1':{'normal':NC,'open':[[3,2]],'close':[[4,6]]},
+	    'W4':{'normal':NO,'open':[[2,2],[3,2]],'close':[[1,6],[2,6]]},
+    }
+  },
+  'sRD':{'name':'sRD','coil':218,'contacts':
+    {
+      'A4':{'normal':NC,'open':[],'close':[]},
+      'B2':{'normal':NC,'open':[[2,2],[4,2],[6,2],[8,2]],'close':[[1,6],[3,6],[5,6],[7,6]]},
+      'B3':{'normal':NO,'open':[[3,2],[5,2],[7,2],[8,2]],'close':[[2,6],[4,6],[6,6],[8,6]]},
+      'C1':{'normal':NO,'open':[[18,2]],'close':[[2,6]]},
+      'C4':{'normal':NO,'open':[[3,2],[5,2],[7,2]],'close':[[2,6],[4,6],[6,6]]},
+      'H3':{'normal':NC,'open':[[6,2]],'close':[[7,6]]},
+      'H4':{'normal':NC,'open':[],'close':[]},
+      'K3':{'normal':NO,'open':[[3,1]],'close':[[2,5]]},
+      'L1':{'normal':NC,'open':[[2,2],[4,2]],'close':[[1,6],[3,6]]},
+      'L2':{'normal':NO,'open':[[5,1]],'close':[[4,5]]},
+      'L3':{'normal':NC,'open':[[5,2]],'close':[[1,6]]},
+      'L4':{'normal':NC,'open':[[5,2]],'close':[[1,6]]},
+      'M1':{'normal':NC,'open':[],'close':[]},
+      'M2':{'normal':NC,'open':[[5,2],[15,2]],'close':[[18,6],[6,2]]},
+    }
+  },
 }
 
 function make_seq(seq,contact) {

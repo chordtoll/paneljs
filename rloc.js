@@ -2,7 +2,7 @@ var EMPTY='----'
 var rloc=[
 ['B0'  ,'F0'  ,'1`'  ,'2`'  ,'3`'  ,'4`'  ,'5`'  ,'6`'  ,'7`'  ,'8`'  ,'9`'  ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,'L1'  ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,'TN'  ],
 [EMPTY ,'0'   ,'1'   ,'2'   ,'3'   ,'4'   ,'5'   ,'6'   ,'7'   ,'8'   ,'9'   ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,'TG'  ,'MTG' ],
-['AL'  ,'AC'  ,'AZ'  ,'A1'  ,'A2'  ,'A4'  ,'A5'  ,'PS'  ,'FO1' ,'FO2' ,'FO3' ,'MB'  ,'SB'  ,'IA'  ,'LR'  ,'LR1' ,'T'   ,'CR'  ,'SC1' ,'OFT' ,'L2'  ,'ASC' ,EMPTY ,'SR'  ,'RA'  ],
+['AL'  ,'AC'  ,'AZ'  ,'A1'  ,'A2'  ,'A4'  ,'A5'  ,'PS'  ,'F01' ,'F02' ,'F03' ,'MB'  ,'SB'  ,'IA'  ,'LR'  ,'LR1' ,'T'   ,'CR'  ,'SC1' ,'OFT' ,'L2'  ,'ASC' ,EMPTY ,'SR'  ,'RA'  ],
 ['BL'  ,'BC'  ,'BZ'  ,'B1'  ,'B2'  ,'B4'  ,'B5'  ,'RL'  ,'RL1' ,'OF1' ,'FP'  ,'FP1' ,'TG1' ,'TG2' ,'TAN' ,EMPTY ,EMPTY ,'OT'  ,'OT1' ,'OT2' ,'TDC' ,'TDR' ,'TDS' ,'MBP' ,'SC'  ],
 ['CL'  ,'CC'  ,'CZ'  ,'C1'  ,'C2'  ,'C4'  ,'C5'  ,'CI'  ,'OG1' ,'OG2' ,'OG4' ,'OG5' ,'SO'  ,'SR1' ,EMPTY ,'MS'  ,EMPTY ,'RA1' ,'DPT' ,'TMS' ,'TM'  ,'TM1' ,EMPTY ,'AV2' ,'SWF' ],
 ['THL' ,'THC' ,'THZ' ,'TH1' ,'TH2' ,'TH4' ,'TH5' ,'THT' ,'OB1' ,'OB2' ,'OB4' ,'SD'  ,'SD1' ,'OB5' ,'ST'  ,'TR'  ,'TR1' ,'PR'  ,'SP'  ,'OP'  ,'AV'  ,'AV1' ,'OBA' ,'AL1' ,EMPTY ],

@@ -41,5 +41,5 @@ function dial(time,digits) {
   return inputs;
 }
 
-testinput=dial(0,'7225678');
+testinput=dial(0,'2225678');
 console.log(testinput);

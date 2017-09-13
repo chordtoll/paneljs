@@ -96,4 +96,39 @@ var relays={
   'DG5':{'name':'DG5','ttc':1, 'coil':1000,'coil2':3000,'contacts':[['2T','3T',NC,1 ,0],['2T','1T',NO,1 ,0],['2B','1B',NO,1 ,0]]},
 
   'SO': {'name':'SO', 'ttc':2, 'coil':1000,'coil2':1000,'contacts':[['4T','3T',NO,2 ,0],['2T','1T',NO,2 ,0],['2B','3B',NO,1 ,0],['2B','1B',NO,2 ,1]]},
+
+  'dL': {'name':'dL', 'ttc':1, 'coil':1200,             'contacts':[['4T','5T',NC,1 ,0],['4T','3T',NO,1 ,0],['2B','3B',NC,1 ,0],['2B','1B',NO,1 ,0]]},
+
+  '9`' :{'name':'9`' ,'ttc':1, 'coil':500 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '8`' :{'name':'8`' ,'ttc':1, 'coil':500 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '7`' :{'name':'7`' ,'ttc':1, 'coil':500 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '6`' :{'name':'6`' ,'ttc':1, 'coil':500 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '5`' :{'name':'5`' ,'ttc':1, 'coil':500 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '4`' :{'name':'4`' ,'ttc':1, 'coil':500 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '3`' :{'name':'3`' ,'ttc':1, 'coil':500 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '2`' :{'name':'2`' ,'ttc':1, 'coil':500 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '1`' :{'name':'1`' ,'ttc':1, 'coil':500 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+
+  '9'  :{'name':'9'  ,'ttc':1, 'coil':245 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '8'  :{'name':'8'  ,'ttc':1, 'coil':245 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '7'  :{'name':'7'  ,'ttc':1, 'coil':245 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '6'  :{'name':'6'  ,'ttc':1, 'coil':245 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '5'  :{'name':'5'  ,'ttc':1, 'coil':245 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '4'  :{'name':'4'  ,'ttc':1, 'coil':245 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '3'  :{'name':'3'  ,'ttc':1, 'coil':245 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '2'  :{'name':'2'  ,'ttc':1, 'coil':245 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '1'  :{'name':'1'  ,'ttc':1, 'coil':245 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  '0'  :{'name':'0'  ,'ttc':1, 'coil':245 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+
+  'B0' :{'name':'B0', 'ttc':1, 'coil':1000,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+  'F0' :{'name':'F0', 'ttc':1, 'coil':1000,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
+
+  'F03':{'name':'F03','ttc':1, 'coil':4000,             'contacts':[['1T','2T',NO,1 ,0],['4T','3T',NO,1 ,0]]},
+  'F02':{'name':'F02','ttc':1, 'coil':850 ,             'contacts':[['1T','2T',NC,1 ,0]]},
+  'F01':{'name':'F01','ttc':1, 'coil':1450,             'contacts':[['4T','5T',NC,1 ,0],['4T','3T',NO,1 ,0],['1B','2B',NO,1 ,0],['2T','1T',NO,1 ,0]]},
+  
+  'STP':{'name':'STP','ttc':1, 'coil':125 ,             'contacts':[['1T','AT',NO,1 ,0]]},
+
+  'IS' :{'name':'IS' ,'ttc':2, 'coil':1920,             'contacts':[['2T','3T',NC,2 ,0],['2T','1T',NO,2 ,0],['6T','5T',NO,1 ,0],['6T','4T',NC,2 ,1],['2B','3B',NC,2 ,0],['2B','1B',NO,2 ,0]]},
+  'IA' :{'name':'IA' ,'ttc':1, 'coil':2100,             'contacts':[['2B','3B',NC,1 ,0]]},
 };

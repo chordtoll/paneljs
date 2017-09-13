@@ -5,12 +5,15 @@ function tick() {
   nodetick();
   relaytick1();
   seqtick1();
+  disttick1();
   relaytick2();
   seqtick2();
+  disttick2();
+  decodertick();
   ticktables();
   timer++;
   if (running)
-    setTimeout(tick,1);
+    setTimeout(tick,10);
 }
 
 nodes={};
@@ -133,17 +136,22 @@ function ds_solve_simple_rdiv() {
     var weighted_sum=0;
     var sum_weights=0;
     var all_direct=true;
+    var r_count=0;
     for (l in ds_resistances[k]) {
       if (nodevoltage_direct(l)<0) {
         all_direct=false;
         break;
       }
+      r_count++;
       var weight=1/ds_resistances[k][l];
       weighted_sum+=weight*nodevoltage_direct(l);
       sum_weights+=weight;
     }
     if (all_direct) {
-      ds_voltages_indirect[k]=weighted_sum/sum_weights;
+      if (r_count==1)
+        ds_voltages_indirect[k]=-1;
+      else
+        ds_voltages_indirect[k]=weighted_sum/sum_weights;
     }
   }
 }
@@ -238,10 +246,12 @@ function ds_union_links() {
 }
 
 function coiloperated(relay) {
+
   var nv1=nodevoltage(relay.name+".cA");
   var nv2=nodevoltage(relay.name+".cB");
   var c1;
   var c2=false;
+  var c3=false;
   if (nv1<0 || nv2<0)
     c1=false;
   else
@@ -254,7 +264,17 @@ function coiloperated(relay) {
     else
       c2=nv3!=nv4;
   }
-  return c1|c2;
+  if ('coil3' in relay) {
+    var nv5=nodevoltage(relay.name+".cE");
+    var nv6=nodevoltage(relay.name+".cF");
+    if (nv5<0 || nv6<0)
+      c3=false;
+    else
+      c3=nv5!=nv6;
+  }
+
+
+  return c1|c2|c3;
 }
 
 function make_link(c0,c1) {
@@ -307,6 +327,7 @@ function init() {
     sequences[s].fpos=0;
     links.push([sequences[s].name+'.cA',sequences[s].name+'cB',sequences[s].coil])
   }
+  sequences['sRD'].pos=2;
   init_seq();
 }
 

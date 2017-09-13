@@ -6,6 +6,7 @@
   <script src="decoder.js"></script>
   <script src="rloc.js"></script>
   <script src="sequence.js"></script>
+  <script src="district.js"></script>
   <script src="testinput.js"></script>
   <script src="messages.js"></script>
   <script type="text/javascript">
@@ -23,6 +24,13 @@
 
     function stopSim() {
       running=false;
+      ticktables(true);
+    }
+
+    function tickSim() {
+      running=false;
+      tick();
+      ticktables(true);
     }
 
     function buildsendertable() {
@@ -50,8 +58,12 @@
 
       document.getElementById('R1').innerHTML=seqState('sR1');
       document.getElementById('R2').innerHTML=seqState('sR2');
+      document.getElementById('RD').innerHTML=seqState('sRD');
+      document.getElementById('vD').innerHTML=distState();
       document.getElementById('R1n').innerHTML=seqStatename('sR1');
       document.getElementById('R2n').innerHTML=seqStatename('sR2');
+      document.getElementById('RDn').innerHTML=seqStatename('sRD');
+      document.getElementById('vDn').innerHTML=distStatename();
 
       for (r in relays) {
         var td=document.getElementById('r'+r)
@@ -105,7 +117,7 @@
 
       var tb  = document.createElement('tbody');
       tb.id="specialnodeb";
-      for(var n of ['L.3T','P1.cA','P2.cA','P3.cA','P4.cA','P5.cA','P6.cA','t1','t2','t4','t5','t0','tRA']){
+      for(var n of ['L.3T','P1.cA','P2.cA','P3.cA','P4.cA','P5.cA','P6.cA','t1','t2','t4','t5','t0','tRA','tFT']){
         var tr = tb.insertRow();
         var td = tr.insertCell();
         td.innerHTML='<a onclick="traceNode(\''+n+'\');">'+n+'</a>';
@@ -123,7 +135,7 @@
 <body onload="doOnload();">
   <button onclick="startSim();">Start</button>
   <button onclick="stopSim();">Stop</button>
-  <button onclick="tick();">Step</button>
+  <button onclick="tickSim();">Step</button>
   <br>
   <div id=timer></div>
   <table class=content>
@@ -145,9 +157,31 @@
         <td id=R2></td>
         <td id=R2n></td>
       </tr>
+      <tr>
+        <td>R-D</td>
+        <td id=RD></td>
+        <td id=RDn></td>
+      </tr>
+      <tr>
+      </tr>
+      <tr>
+        <td>Dist</td>
+        <td id=vD></td>
+        <td id=vDn></td>
+      </tr>
     </tbody>
   <table class=content>
     <tbody id=sender></tbody>
+  </table>
+  <table class=content>
+    <tr>
+      <td id=rdG>G</td>
+      <td id=rdI>I</td>
+      <td id=rdCH>CH</td>
+      <td id=rdCI1>CI1</td>
+      <td id=rdC1>C1</td>
+      <td id=rdL>L</td>
+    </tr>
   </table>
   <textarea id=log cols=80 rows=10></textarea>
   <br>

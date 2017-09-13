@@ -3,9 +3,10 @@ decodertable={
   365: {'DB':2,'DG':0,'OB':1,'OG':5,'SO':0},
   722: {'DB':1,'DG':4,'OB':0,'OG':0,'SO':1},
   832: {'DB':3,'DG':4,'OB':0,'OG':0,'SO':1},
-  844: {'DB':1,'DG':7,'OB':0,'OG':0,'SO':1},
+  844: {'DB':1,'DG':8,'OB':0,'OG':0,'SO':1},
   PCI: {'DB':3,'DG':0,'OB':0,'OG':0,'SO':1},
   311: {'DB':1,'DG':9,'OB':0,'OG':0,'SO':1},
+  222: {'DB':4,'DG':9,'OB':0,'OG':0,'SO':1},
 }
 
 var dTimer=0;
@@ -50,6 +51,15 @@ function decoderstart() {
 }
 
 function decodertick() {
+  if(dTimer>0) {
+    dTimer--;
+    if (dTimer==1) {
+      make_link('dRL','GND');
+    }
+    if (dTimer==0) {
+      break_link('dRL','GND');
+    }
+  }
 }
 
 //      232   365   722   832   844   PCI   311
