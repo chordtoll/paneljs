@@ -11,6 +11,12 @@
   <script src="messages.js"></script>
   <script type="text/javascript">
     function doOnload() {
+      var ua = window.navigator.userAgent;
+      console.log(ua);
+      var ms_ie = ~ua.indexOf('MSIE ') || ~ua.indexOf('Trident/') || ~ua.indexOf('Edge/');
+      if (ms_ie) {
+        alert("Sorry, this doesn't work on IE yet");
+      }
       init();
       nodelist();
       buildsendertable();
