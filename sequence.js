@@ -69,19 +69,30 @@ var statenames={
   }
 }
 
+/*
+ * THE BCO BOOK LIES
+ * THE GCO BOOK LIES
+ * THE SD LIES
+ * 
+ * This section is full of lies, TODO figure out what is the truth
+ */
+
 var sequences={
   'sR1':{'name':'sR1','coil':218},
   'sR2':{'name':'sR2','coil':218,'contacts':
     {
       'A4':{'normal':NC,'open':[],'close':[]},
-      'B2':{'normal':NO,'open':[[3,2]],'close':[[1,6]]},
+      'B1':{'normal':NO,'open':[[4,2]],'close':[[3,6]]},
+      'B2':{'normal':NO,'open':[[3,2],[5,2],[6,2]],'close':[[1,6],[4,6],[5,6]]},
       'C4':{'normal':NC,'open':[[1,2]],'close':[[18,6]]},
       'F1':{'normal':NC,'open':[],'close':[]},
-      'F3':{'normal':NO,'open':[[3,4]],'close':[[1,4]]},
+      'F3':{'normal':NO,'open':[[3,4]],'close':[[1,4]]},        //Check???
+      'F4':{'normal':NO,'open':[[6,2]],'close':[[2,6]]},
       'H1':{'normal':NC,'open':[[11,2]],'close':[[18,6]]},
       'H2':{'normal':NC,'open':[[10,2]],'close':[[11,6]]},
 	    'I1':{'normal':NC,'open':[],'close':[]},
       'I2':{'normal':NC,'open':[[11,2]],'close':[[18,6]]},
+      'I4':{'normal':NO,'open':[[6,2]],'close':[[2,6]]},
       'J3':{'normal':NO,'open':[[3,4]],'close':[[1,4]]},
 	    'J4':{'normal':NO,'open':[[3,2]],'close':[[1,6]]},
       'O1':{'normal':NC,'open':[],'close':[]},
@@ -91,7 +102,8 @@ var sequences={
       'Q4':{'normal':NO,'open':[[2,2]],'close':[[1,6]]},
       'R1':{'normal':NO,'open':[[6,2]],'close':[[1,6]]},
       'V1':{'normal':NC,'open':[],'close':[]},
-      'V2':{'normal':NO,'open':[[3,2],[2,2]],'close':[[1,6],[2,6]]},
+      //'V2':{'normal':NO,'open':[[3,2],[2,2]],'close':[[1,6],[2,6]]},
+      'V2':{'normal':NO,'open':[[7,2],[2,2]],'close':[[1,6],[2,6]]},
 	    'W1':{'normal':NC,'open':[[3,2]],'close':[[4,6]]},
 	    'W4':{'normal':NO,'open':[[2,2],[3,2]],'close':[[1,6],[2,6]]},
     }
