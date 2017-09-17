@@ -131,4 +131,7 @@ var relays={
 
   'IS' :{'name':'IS' ,'ttc':2, 'coil':1920,             'contacts':[['2T','3T',NC,2 ,0],['2T','1T',NO,2 ,0],['6T','5T',NO,1 ,0],['6T','4T',NC,2 ,1],['2B','3B',NC,2 ,0],['2B','1B',NO,2 ,0]]},
   'IA' :{'name':'IA' ,'ttc':1, 'coil':2100,             'contacts':[['2B','3B',NC,1 ,0]]},
+
+  'TG1':{'name':'TG1','ttc':1, 'coil':750 ,             'contacts':[['1T','2T',NO,1 ,0]]},
+  'TG2':{'name':'TG2','ttc':1, 'coil':1500,             'contacts':[['1T','2T',NO,1 ,0],['3T','4T',NO,1 ,0]]},
 };

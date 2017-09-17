@@ -106,6 +106,8 @@ var sequences={
       'V2':{'normal':NO,'open':[[7,2],[2,2]],'close':[[1,6],[2,6]]},
 	    'W1':{'normal':NC,'open':[[3,2]],'close':[[4,6]]},
 	    'W4':{'normal':NO,'open':[[2,2],[3,2]],'close':[[1,6],[2,6]]},
+      '!1':{'normal':NC,'open':[],'close':[]},
+      '!2':{'normal':NO,'open':[[7,2]],'close':[[6,6]]},
     }
   },
   'sRD':{'name':'sRD','coil':218,'contacts':

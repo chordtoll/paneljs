@@ -683,6 +683,10 @@ var links=[
   ['sR2.B1','SO.1B' ,0],
   ['sR2.F4','SO.2B' ,0],
 
+//OS-308
+  ['sR2.!2','sR2.cA',0],        //THIS IS TERRIBLE, GET RID OF THIS
+  ['sR2.!1','GND'   ,0],
+
 //Misc
 
   ['ST.cA' ,'AZ.1B' ,0],
