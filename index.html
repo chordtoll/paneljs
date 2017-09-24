@@ -112,11 +112,20 @@
       document.getElementById('R1').innerHTML=seqState('sR1');
       document.getElementById('R2').innerHTML=seqState('sR2');
       document.getElementById('RD').innerHTML=seqState('sRD');
+      document.getElementById('RI').innerHTML=seqState('sRI');
+      document.getElementById('RF').innerHTML=seqState('sRF');
       document.getElementById('vD').innerHTML=distState();
+      document.getElementById('vI').innerHTML=incState();
+      document.getElementById('vF').innerHTML=finState();
       document.getElementById('R1n').innerHTML=seqStatename('sR1');
       document.getElementById('R2n').innerHTML=seqStatename('sR2');
       document.getElementById('RDn').innerHTML=seqStatename('sRD');
+      document.getElementById('RIn').innerHTML=seqStatename('sRI');
+      document.getElementById('RFn').innerHTML=seqStatename('sRF');
       document.getElementById('vDn').innerHTML=distStatename();
+      document.getElementById('vIn').innerHTML=incStatename();
+      document.getElementById('vFn').innerHTML=finStatename();
+
 
       for (var i=0; i<50; i++)
       {
@@ -175,6 +184,10 @@
           td.appendChild(document.createTextNode(parseFloat(nodevoltage(k+'.cA').toFixed(2))));
           var td = tr.insertCell();
           td.appendChild(document.createTextNode(parseFloat(nodevoltage(k+'.cB').toFixed(2))));
+          var td = tr.insertCell();
+          td.appendChild(document.createTextNode(parseFloat(nodevoltage(k+'.cC').toFixed(2))));
+          var td = tr.insertCell();
+          td.appendChild(document.createTextNode(parseFloat(nodevoltage(k+'.cD').toFixed(2))));
         }
         document.getElementById("relayb").replaceWith(tb);
 
@@ -253,11 +266,29 @@
               <td id=RDn></td>
             </tr>
             <tr>
+              <td>R-I</td>
+              <td id=RI></td>
+              <td id=RIn></td>
+            </tr>
+            <tr>
+              <td>R-F</td>
+              <td id=RF></td>
+              <td id=RFn></td>
             </tr>
             <tr>
               <td>Dist</td>
               <td id=vD></td>
               <td id=vDn></td>
+            </tr>
+            <tr>
+              <td>Inc</td>
+              <td id=vI></td>
+              <td id=vIn></td>
+            </tr>
+            <tr>
+              <td>Fin</td>
+              <td id=vF></td>
+              <td id=vFn></td>
             </tr>
           </tbody>
           <table class=content>
@@ -269,27 +300,53 @@
               <td id=rdI>I</td>
               <td id=rdCH>CH</td>
               <td id=rdCI1>CI1</td>
-              <td id=rdC1>C1</td>
+              <td id=rdCI>CI</td>
               <td id=rdL>L</td>
+              <td id=rdD>D</td>
+              <td id=rdDC>DC</td>
+              <td id=rdCS>CS</td>
+            </tr>
+          </table>
+          <table class=content>
+            <tr>
+              <td id=riPU>PU</td>
+              <td id=riL>L</td>
+              <td id=riR>R</td>
+              <td id=riA>A</td>
+              <td id=riS>S</td>
+            </tr>
+          </table>
+          <table class=content>
+            <tr>
+              <td id=rfTB>TB</td>
+              <td id=rfTK>TK</td>
+              <td id=rfPBX>PBX</td>
+              <td id=rfL>L</td>
             </tr>
           </table>
           <textarea id=log cols=80 rows=10></textarea>
           <br>
         </td>
         <td>
-          <table class=content>
+        <table>
+        <tr>
+        <td class=border>
+          <table class=comm>
             <tbody id=dc></tbody>
           </table>
         </td>
-        <td>
-          <table class=content>
+        <td class=border>
+          <table class=comm>
             <tbody id=ic></tbody>
           </table>
         </td>
-        <td>
-          <table class=content>
+        <td class=border>
+          <table class=comm>
             <tbody id=fc></tbody>
           </table>
+        </td>
+        </tr>
+        </table>
         </td>
       </tr>
     </table>

@@ -15,9 +15,9 @@ incContacts['B'][13]=true;
 
 for (var dg=0;dg<10;dg++) {
   for (var gl=0;gl<10;gl++) {
-    incnames[14+dg*11+gl]="incoming Group "+dg+" Line "+gl;
+    incnames[14+dg*11+gl]="Incoming Group "+dg+" Line "+gl;
   }
-  incnames[14+dg*11+10]="incoming Group "+dg+" Overflow";
+  incnames[14+dg*11+10]="Incoming Group "+dg+" Overflow";
   incContacts['B'][14+dg*11+10]=true
 }
 

@@ -97,7 +97,7 @@ var relays={
 
   'SO': {'name':'SO', 'ttc':2, 'coil':1000,'coil2':1000,'contacts':[['4T','3T',NO,2 ,0],['2T','1T',NO,2 ,0],['2B','3B',NO,1 ,0],['2B','1B',NO,2 ,1]]},
 
-  'dL': {'name':'dL', 'ttc':1, 'coil':1200,             'contacts':[['4T','5T',NC,1 ,0],['4T','3T',NO,1 ,0],['2B','3B',NC,1 ,0],['2B','1B',NO,1 ,0]]},
+  'dL': {'name':'dL', 'ttc':1, 'coil':1200,'coil2':9999,'contacts':[['4T','5T',NC,1 ,0],['4T','3T',NO,1 ,0],['2B','3B',NC,1 ,0],['2B','1B',NO,1 ,0]]},
 
   '9`' :{'name':'9`' ,'ttc':1, 'coil':500 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
   '8`' :{'name':'8`' ,'ttc':1, 'coil':500 ,             'contacts':[['AT','2T',NC,1 ,0],['AT','1T',NO,1 ,0]]},
@@ -134,4 +134,10 @@ var relays={
 
   'TG1':{'name':'TG1','ttc':1, 'coil':750 ,             'contacts':[['1T','2T',NO,1 ,0]]},
   'TG2':{'name':'TG2','ttc':1, 'coil':1500,             'contacts':[['1T','2T',NO,1 ,0],['3T','4T',NO,1 ,0]]},
+
+  'iL' :{'name':'iL' ,'ttc':1, 'coil':1000,'coil2':1000,'contacts':[['2T','3T',NC,1 ,0],['2T','1T',NO,1 ,0],['2B','3B',NC,1 ,0],['2B','1B',NO,1 ,0]]},
+
+  'dD' :{'name':'dD' ,'ttc':1, 'coil':9999,'coil2':9999,'contacts':[['1T','2T',NO,1 ,0]]},
+  'dDC':{'name':'dDC','ttc':1, 'coil':9999,'coil2':9999,'contacts':[['AB','1B',NO,1 ,0]]},
+  'dCI':{'name':'dCI','ttc':1, 'coil':9999,'coil2':9999,'contacts':[['1B','2B',NO,1 ,0]]},
 };

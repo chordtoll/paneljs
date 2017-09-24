@@ -1,0 +1,7 @@
+B GRD -> A jack         cart first
+EX K -> Remote
+TST -> Incoming frame
+
+2WI - 2 wire incoming
+1200ohm CR
+Number on number buttons

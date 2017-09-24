@@ -247,6 +247,9 @@ function ds_union_links() {
 
 function coiloperated(relay) {
 
+  if (relay.name=='dDC')
+    return true;
+
   var nv1=nodevoltage(relay.name+".cA");
   var nv2=nodevoltage(relay.name+".cB");
   var c1;

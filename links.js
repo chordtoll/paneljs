@@ -484,25 +484,9 @@ var links=[
 
 //OS-307.1      //REPLACE WITH 212.1 GCO BOOK
 
-  ['sRD.B2','dL.3T' ,0],
-  ['sRD.B3','dL.5T' ,0],
-  ['sRD.cA','sRD.A4',0],
-  ['sRD.cB','48V'   ,0],
 
-  ['dL.1B' ,'sRD.L1',0],
-  ['dL.2B' ,'sRD.L3',0],
-  ['dL.4T' ,'sRD.M1',0],
-  ['dL.cA' ,'sRD.L1',0],
-  ['dL.cB' ,'48V'   ,0],
-
-  ['tFT'   ,'sRD.L4',0],
-
-  ['sRD.M2','GND'   ,0],
-
-  ['dUP.cA','sRD.C4',0],
-  ['dUP.cB','48V'   ,0],
-
-  ['sRD.C1','dL.3T' ,0],
+  //FT segment
+  ['sRD.H4','GND'   ,0],  
 
   ['dC.cG' ,'sRD.H3',0],
   ['dC.cA' ,'sRD.K3',0],
@@ -511,7 +495,74 @@ var links=[
   ['dC.bG' ,'dC.bA' ,0],
   ['dC.bG' ,'dC.bB' ,0],
 
+  ['dL.1B' ,'sRD.L1',0],
+  ['dL.2B' ,'sRD.L3',0],
+
+  ['sRD.B2','dL.3T' ,0],
+  ['sRD.B3','dL.5T' ,0],
+  ['sRD.cA','sRD.A4',0],
+  ['sRD.cB','48V'   ,0],
+
+  ['dL.cA' ,'sRD.L1',0],
+  ['dL.cB' ,'48V'   ,0],
+
+  ['tFT'   ,'sRD.L4',0],
+  
+  //UP segment
+  
+  ['dL.4T' ,'sRD.M1',0],
+  ['sRD.M2','GND'   ,0],
+  ['sRD.M4','dDC.1B',0],
+  ['sRD.M4','dD.2TB',0],
+  ['dD.1B' ,'sRD.I2',0],
+  ['dDC.AB','lE.1'  ,0],
+  ['lE.2'  ,'sRD.I4',0],
   ['sRD.H4','GND'   ,0],
+  
+  ['lE.1'  ,'lE.2'  ,0],  //TEMP
+
+  ['dUP.cA','sRD.C4',0],
+  ['dUP.cB','48V'   ,0],
+
+  ['sRD.C1','dL.3T' ,0],
+
+  //SC segment
+  
+  ['sRD.V2','tSC'   ,0],
+  ['dCI.2B','sRD.V1',0],
+  ['sRD.U1','dCI.1B',0],
+  ['dCH.cA','sRD.U2',0],
+  ['dCH.cB','GND'   ,0],
+  ['dD.cC' ,'sRD.U3',0],
+  ['dD.cD' ,'48V'   ,0],
+
+  ['sRD.H4','GND'   ,0],
+  ['dD.T1' ,'sRD.I2',0],
+  ['dD.T1' ,'lE.1'  ,0],
+  ['dD.cA' ,'dDC.AB',0],
+
+  ['tSC'   ,'GND'   ,0],  
+
+  //CI segment
+  
+  ['dCI.cC','sRD.U4',0],
+  ['dCI.cC','sRD.S2',0],
+  ['dCI.cD','48V'   ,0],
+
+  ['sRD.S4','GND'   ,0],
+  ['sRD.U1','dCI.1B',0],
+  ['dCI.2B','sRD.V1',0],
+  ['sRD.V3','dL.2T' ,0],
+  ['dL.1T' ,'sRD.E1',0],
+  ['sRD.E3','GND'   ,0],
+
+//OS-213.1
+
+  ['GND'   ,'sRD.O1',0],
+  ['sRD.O4','sRD.R3',0],
+  ['sRD.R1','dL.cC' ,0],
+  ['dL.cD' ,'48V'   ,0],
+
 
 //OS-307.2
 
@@ -683,6 +734,26 @@ var links=[
   ['sR2.B1','SO.1B' ,0],
   ['sR2.F4','SO.2B' ,0],
 
+//SD-21043
+
+  ['tdoT'  ,'sRI.S4',0],
+  ['sRI.S2','iC.bB' ,0],
+
+  ['iL.cA' ,'sRI.T2',0],
+  ['iL.cB' ,'48V'   ,0],
+
+  ['iL.cD' ,'48V'   ,0],
+
+//OS-321.2
+
+  ['sR2.P1','GND'   ,0],    //Through SWF,AV
+  ['sR2.P2','SR2.L3',0],    //Through CR
+  ['sR2.L1','F03.1T',0],
+  ['sR2.W2','RL1.1B',0],    //Through CLA
+  
+                            
+
+
 //OS-308
   ['sR2.!2','sR2.cA',0],        //THIS IS TERRIBLE, GET RID OF THIS
   ['sR2.!1','GND'   ,0],
@@ -706,8 +777,13 @@ var links=[
 
   ['sRD.A' ,'sRD.B' ,0],
   ['sRD.K' ,'sRD.L' ,0],
+  ['sRD.I' ,'sRD.H' ,0],
 
   ['sR2.cB','48V'   ,0],
   ['sRD.cB','48V'   ,0],
+
+  ['sRI.A' ,'sRI.B' ,0],
+  ['sRI.D' ,'sRI.E' ,0],
+  ['sRI.S' ,'sRI.T' ,0],
 
 ];

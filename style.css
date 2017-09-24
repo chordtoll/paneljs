@@ -7,3 +7,13 @@
   padding: 2px;
   text-align: left;
 }
+
+.border {
+  border: 1px solid #999;
+  padding: 2px;
+  text-align: left;
+}
+
+.comm tr td {
+  padding: 2px;
+}
