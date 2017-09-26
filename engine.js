@@ -34,21 +34,21 @@ function nodelist() {
 function nodetick() {
   nodelist();
   ds_pop_nodes();
-  console.log(ds_nodes);
+  //console.log(ds_nodes);
   ds_union_links();
   ds_makeset(ds_nodes,"48V");
   ds_makeset(ds_nodes,"GND");
   ds_voltages['48V']=48;
   ds_voltages['GND']=0;
-  console.log(ds_nodes);
+  //console.log(ds_nodes);
   ds_reparent_voltages();
-  console.log(ds_nodes);
+  //console.log(ds_nodes);
   ds_reparent_resistive_links();
   ds_calculate_resistances();
-  console.log(ds_resistances);
+  //console.log(ds_resistances);
   ds_merge_parallel();
-  console.log(ds_resistances);
-  console.log(ds_nodes);
+  //console.log(ds_resistances);
+  //console.log(ds_nodes);
   ds_solve_simple_rdiv();
 }
 

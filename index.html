@@ -5,6 +5,7 @@
   <script src="engine.js"></script>
   <script src="decoder.js"></script>
   <script src="rloc.js"></script>
+  <script src="rcolor.js"></script>
   <script src="sequence.js"></script>
   <script src="district.js"></script>
   <script src="incoming.js"></script>
@@ -25,7 +26,7 @@
   <table>
     <tr>
       <td>
-        <table class=content>
+        <table class=content id=seqtab>
           <thead>
             <tr>
               <th></th>
@@ -34,42 +35,42 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr id=R1h>
               <td>R-1</td>
               <td id=R1></td>
               <td id=R1n></td>
             </tr>
-            <tr>
+            <tr id=R2h>
               <td>R-2</td>
               <td id=R2></td>
               <td id=R2n></td>
             </tr>
-            <tr>
+            <tr id=RDh>
               <td>R-D</td>
               <td id=RD></td>
               <td id=RDn></td>
             </tr>
-            <tr>
+            <tr id=RIh>
               <td>R-I</td>
               <td id=RI></td>
               <td id=RIn></td>
             </tr>
-            <tr>
+            <tr id=RFh>
               <td>R-F</td>
               <td id=RF></td>
               <td id=RFn></td>
             </tr>
-            <tr>
+            <tr id=vDh>
               <td>Dist</td>
               <td id=vD></td>
               <td id=vDn></td>
             </tr>
-            <tr>
+            <tr id=vIh>
               <td>Inc</td>
               <td id=vI></td>
               <td id=vIn></td>
             </tr>
-            <tr>
+            <tr id=vFh>
               <td>Fin</td>
               <td id=vF></td>
               <td id=vFn></td>
@@ -78,6 +79,8 @@
           <table class=content>
             <tbody id=sender></tbody>
           </table>
+          <div id=frtab>
+          <div id=rtdist>
           District:
           <table class=content>
             <tr>
@@ -92,6 +95,8 @@
               <td id=rdCS>CS</td>
             </tr>
           </table>
+          </div>
+          <div id=rtinc>
           Incoming:
           <table class=content>
             <tr>
@@ -102,6 +107,8 @@
               <td id=riS>S</td>
             </tr>
           </table>
+          </div>
+          <div id=rtfin>
           Final:
           <table class=content>
             <tr>
@@ -111,11 +118,13 @@
               <td id=rfL>L</td>
             </tr>
           </table>
+          </div>
+          </div>
           <textarea id=log cols=80 rows=10></textarea>
           <br>
         </td>
         <td>
-        <table>
+        <table id=comtab>
         <tr>
         <td class=border>
           <table class=comm>
@@ -137,6 +146,7 @@
         </td>
       </tr>
     </table>
+    <div id=extra>
     <button onclick="ticktables(true);">Update</button>
     <table>
       <tr>
@@ -189,4 +199,5 @@
         </td>
       </tr>
     </table>
+    </div>
   </body>
