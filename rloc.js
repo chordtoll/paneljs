@@ -1,4 +1,4 @@
-var EMPTY='----'
+var EMPTY='    '
 var rloc=[
 ['B0'  ,'F0'  ,'1`'  ,'2`'  ,'3`'  ,'4`'  ,'5`'  ,'6`'  ,'7`'  ,'8`'  ,'9`'  ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,'L1'  ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,'TN'  ],
 [EMPTY ,'0'   ,'1'   ,'2'   ,'3'   ,'4'   ,'5'   ,'6'   ,'7'   ,'8'   ,'9'   ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,EMPTY ,'TG'  ,'MTG' ],
