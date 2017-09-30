@@ -1,0 +1,28 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.3/svg.js"></script>
+  <script src="canvas/render.js"></script>
+  <script>
+    function onload() {
+      loadScript("canvas/pages/OS320.js",render);
+    }
+    //This is not a great solution, but it works. StackOverflow 950087.
+    function loadScript(url, callback)
+    {
+    // Adding the script tag to the head as suggested before
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
+
+    // Fire the loading
+    head.appendChild(script);
+  }
+</script>
+<body onload="onload();">
+  <div id="drawing"></div>
+</body>

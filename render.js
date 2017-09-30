@@ -7,6 +7,8 @@ function doOnload() {
     alert("Sorry, this doesn't work on IE yet");
   }
   demomode=location.search.split('demo=')[1];
+  if (demomode==undefined)
+    demomode=0;
   init();
   nodelist();
   hideelements();
