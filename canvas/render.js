@@ -43,7 +43,11 @@ function render() {
         }
       }
       for (r of schrelays) {
-        var relay=drawrelay(draw,r[0],r[2],r[3],r[4],0);
+        if (r[0]=='P1' || r[0]=='P1`') {
+          var relay=drawrelay(draw,r[0],r[2],r[3],r[4],1);
+        } else {
+          var relay=drawrelay(draw,r[0],r[2],r[3],r[4],0);
+        }
         relay.move(r[1][0],r[1][1]);
       }
       for (l of schlinks) {
